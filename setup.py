@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="calendars",
+    name="cals",
     version="0.0.1",
     author="Behrouz Safari",
     author_email="behrouz.safari@gmail.com",
     description="A python package for calendrical calculations",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/behrouzz/calendars",
+    url="https://github.com/behrouzz/cals",
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",

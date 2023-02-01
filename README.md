@@ -1,15 +1,15 @@
 **Author:** [Behrouz Safari](https://astrodatascience.net//)<br/>
 **License:** [MIT](https://opensource.org/licenses/MIT)<br/>
 
-# calendars
+# cals
 *A python package for calendrical calculations*
 
 
 ## Installation
 
-Install the latest version of *calendars* from [PyPI](https://pypi.org/project/calendars/):
+Install the latest version of *cals* from [PyPI](https://pypi.org/project/cals/):
 
-    pip install calendars
+    pip install cals
 
 Requirements are *numpy*, *scipy*, *pandas* and *requests*.
 
@@ -19,7 +19,7 @@ Requirements are *numpy*, *scipy*, *pandas* and *requests*.
 Let's read a file:
 
 ```python
->>> from calendars import Gregorian, gregorian_from_jd
+>>> from cals import Gregorian, gregorian_from_jd
 >>> g = Gregorian(2023, 2, 1)
 >>> g
 Gregorian(2023, 2, 1)
@@ -35,7 +35,7 @@ Gregorian(2023, 2, 11)
 >>> date.to_persian()
 Persian(1401, 11, 22)
 >>> 
->>> from calendars import Persian, persian_from_jd
+>>> from cals import Persian, persian_from_jd
 >>> p = Persian(1401, 11, 22)
 >>> p
 Persian(1401, 11, 22)
