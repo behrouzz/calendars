@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="cals",
-    version="0.0.1",
+    version="0.1.0",
     author="Behrouz Safari",
     author_email="behrouz.safari@gmail.com",
     description="A python package for calendrical calculations",

@@ -4,6 +4,7 @@ Proleptic Gregorian Calendar
 
 import numpy as np
 from .data import gre_jul, jul_gre
+from .utils import time2day, day2time
 
 
 MONTHSDAYS_COMMUN = np.array([31,28,31,30,31,30, 31,31,30,31,30,31])
@@ -154,13 +155,15 @@ def add_days(date, delta):
         return __add_days(date, delta)
 
 
-def gregorian_to_jd(date):
+def gregorian_to_jd(datetime):
+    date = datetime[:3]
+    time = datetime[3:]
     y = date[0]
     y0 = y - (y%1000)
     jd0 = gre_jul[y0]
     date0 = (y0, 1, 1)
     dt = days_between_dates(date0, date)
-    return jd0 + dt
+    return jd0 + dt + time2day(time)
 
 
 def jd_to_gregorian(jd):
@@ -168,4 +171,7 @@ def jd_to_gregorian(jd):
     jd0 = arr[arr<=jd].max()
     y0 = jul_gre[jd0]
     date0 = (y0, 1, 1)
-    return add_days(date0, int(jd-jd0))
+    date = add_days(date0, int(jd-jd0))
+    #time = day2time(jd-jd0)
+    time = day2time((jd-jd0)-int(jd-jd0))
+    return date, time
